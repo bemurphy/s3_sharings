@@ -9,9 +9,17 @@ module.exports = function(config, callback) {
   var parser = new readability.parser();
 
   parser.parse(config.url, function (err, parsed) {
+    var itemContent = {
+      url: parsed.url,
+      domain: parsed.domain,
+      title: parsed.title,
+      excerpt: parsed.excerpt,
+      image_src: parsed.lead_image_url,
+      created_at:  new Date(),
+    };
+
     console.timeEnd("readability");
-    config.itemContent = parsed;
-    config.itemContent.created_at = new Date();
+    config.itemContent = itemContent;
     callback(err, config);
   });
 };

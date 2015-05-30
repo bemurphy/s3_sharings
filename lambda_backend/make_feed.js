@@ -8,8 +8,8 @@ var formatDescription = function(item, user) {
   if (item.comment) content += item.comment;
 
   content += '<p>' + item.excerpt + '</p>';
-  if (item.lead_image_url) {
-    content += '<img src="' + item.lead_image_url + '" />';
+  if (item.image_src) {
+    content += '<img src="' + item.image_src + '" />';
   }
 
   return content;

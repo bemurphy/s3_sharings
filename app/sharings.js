@@ -18,7 +18,7 @@ var sharings = {
         m(".panel-body", [
           m(".media", [
             m("a.pull-left", {href: sharing.url, target: "_blank"}, [
-              m("img.media-object", {src: sharing.lead_image_url || "http://sharings-too.herokuapp.com/img/thumbnail-default.jpg"})
+              m("img.media-object", {src: sharing.image_src || "http://sharings-too.herokuapp.com/img/thumbnail-default.jpg"})
             ]),
             m(".media-body", [
               m(".media-heading", [

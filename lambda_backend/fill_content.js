@@ -2,7 +2,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 
 module.exports = function(config, callback) {
-  if (config.itemContent.lead_image_url) return callback(null, config);
+  if (config.itemContent.image_src) return callback(null, config);
 
   console.time("fill_content");
 
@@ -12,7 +12,7 @@ module.exports = function(config, callback) {
 
     var $ = cheerio.load(body);
 
-    config.itemContent.lead_image_url = $('meta[property="og:image"]').attr('content') ||
+    config.itemContent.image_src = $('meta[property="og:image"]').attr('content') ||
       $('meta[property="og:image:url"]').attr('content') ||
       $('meta[itemprop="image"]').attr('content') ||
       $('meta[name="twitter:image:src"]').attr('content') ||
