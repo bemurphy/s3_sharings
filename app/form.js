@@ -9,7 +9,7 @@ var form = {
     var ctrl = this;
     var sharings = data.sharings;
 
-    ctrl.errorFn = data.errorFn;
+    ctrl.alerts = data.alerts;
     ctrl.url = m.prop('');
     ctrl.comment = m.prop('');
     ctrl.loading = m.prop(false);
@@ -21,6 +21,7 @@ var form = {
       if (ctrl.loading()) return true;
 
       ctrl.loading(true);
+      ctrl.alerts.clear();
 
       Sharing.Create({
         user: ctrl.currentUser(),
@@ -36,7 +37,7 @@ var form = {
 
         if (sharing.errorMessage) {
           console.log('error:', sharing.errorMessage);
-          ctrl.errorFn("Oops, couldn't create that sharing!");
+          ctrl.alerts.error("Oops, couldn't create that sharing!");
         } else {
           console.log(sharing);
           sharings().unshift(sharing);

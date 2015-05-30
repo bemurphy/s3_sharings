@@ -7,7 +7,13 @@ function alertDiv(hclass, msg) {
 
 var alerts = {
   controller: function() {
-    this.error = m.prop('');
+    var ctrl = this;
+
+    ctrl.error = m.prop('');
+
+    ctrl.clear = function() {
+      ctrl.error('');
+    };
   },
 
   view: function(ctrl) {

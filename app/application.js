@@ -14,7 +14,7 @@ var application = {
     ctrl.form   = new form.controller({
       sharings: ctrl.sharings.sharings,
       currentUser: window.currentUser,
-      errorFn: ctrl.alerts.error
+      alerts: ctrl.alerts
     });
   },
 
