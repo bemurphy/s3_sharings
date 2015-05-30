@@ -1,6 +1,12 @@
 var navbar = {
   controller: function(data) {
     this.currentUser = m.prop(data.currentUser);
+
+    this.logout = function(e) {
+      e.preventDefault();
+      amazon.Login.logout();
+      location.reload();
+    };
   },
 
   view: function(ctrl) {
@@ -20,7 +26,7 @@ var navbar = {
             m("li.dropdown", [
               m("a.dropdown-toggle[data-toggle='dropdown'][href='#']", [ctrl.currentUser().Name, " ", m("b.caret")]),
               m("ul.dropdown-menu", [
-                m("li", [m("a[href='/logout']", "Sign Out")])
+                m("li", [m("a[href='/logout']", {onclick: ctrl.logout}, "Sign Out")])
               ])
             ])
           ])
