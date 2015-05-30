@@ -26,7 +26,7 @@ var navbar = {
             m("li.dropdown", [
               m("a.dropdown-toggle[data-toggle='dropdown'][href='#']", [ctrl.currentUser().Name, " ", m("b.caret")]),
               m("ul.dropdown-menu", [
-                m("li", [m("a[href='/logout']", {onclick: ctrl.logout}, "Sign Out")])
+                m("li", [m("a[href='#']", {onclick: ctrl.logout}, "Sign Out")])
               ])
             ])
           ])
