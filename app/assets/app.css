@@ -1,0 +1,21 @@
+body {
+  background: #f6f6f6;
+  padding-top: 80px;
+}
+
+.sharing .media > a img {
+  width: 140px;
+  border: 1px solid #ddd;
+}
+
+.sharing .favicon {
+  margin-right: 3px;
+}
+
+.loading-spinner {
+  display: none;
+}
+
+.loading .loading-spinner {
+  display: block;
+}
